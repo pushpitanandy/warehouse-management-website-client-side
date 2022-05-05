@@ -1,17 +1,19 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
+import usePerfumes from '../../../hooks/usePerfumes';
 import Perfume from '../Perfume/Perfume';
 
 const Inventory = () => {
 
-    const [perfumes, setPerfumes] = useState([]);
+    // const [perfumes, setPerfumes] = useState([]);
 
-    useEffect(() => {
-        fetch('http://localhost:5000/perfume')
-            .then(res => res.json())
-            .then(data => setPerfumes(data));
-    }, []);
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/perfume')
+    //         .then(res => res.json())
+    //         .then(data => setPerfumes(data));
+    // }, []);
+
+    const [perfumes, setPerfumes] = usePerfumes();
 
     return (
         <div className='container-fluid m-5'>
