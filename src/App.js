@@ -6,16 +6,20 @@ import Home from './Pages/Home/Home/Home';
 import NotFound from './Pages/Shared/NotFound/NotFound';
 import About from './Pages/Home/About/About';
 import Inventory from './Pages/Home/Inventory/Inventory';
+import ContactUs from './Pages/Home/ContactUs/ContactUs';
+import PerfumeDetail from './Pages/PerfumeDetail/PerfumeDetail';
 
 function App() {
   return (
-    <div>
+    <div className="container-fluid">
       <Header></Header>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path='/inventory' element={<Inventory></Inventory>}></Route>
+        <Route path='/inventory/:id' element={<PerfumeDetail></PerfumeDetail>}></Route>
         <Route path='/about' element={<About></About>}></Route>
+        <Route path='/contactUs' element={<ContactUs></ContactUs>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
