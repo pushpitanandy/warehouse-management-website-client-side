@@ -10,6 +10,7 @@ import ContactUs from './Pages/Home/ContactUs/ContactUs';
 import PerfumeDetail from './Pages/PerfumeDetail/PerfumeDetail';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
+import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -19,7 +20,11 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path='/inventory' element={<Inventory></Inventory>}></Route>
-        <Route path='/inventory/:perfumeId' element={<PerfumeDetail></PerfumeDetail>}></Route>
+        <Route path='/inventory/:perfumeId' element={
+          <RequireAuth>
+            <PerfumeDetail></PerfumeDetail>
+          </RequireAuth>
+        }></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/contactUs' element={<ContactUs></ContactUs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
