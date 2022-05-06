@@ -3,6 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
 
@@ -19,6 +20,7 @@ const Register = () => {
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
+    let errorElement;
 
     const handleRegister = event => {
         event.preventDefault();
@@ -34,6 +36,13 @@ const Register = () => {
 
     if (user) {
         navigate(from, { replace: true });
+    }
+
+    if (error) {
+
+        errorElement = <div>
+            <p className='text-danger'>Error: {error.message}</p>
+        </div>
     }
 
     return (
@@ -53,14 +62,13 @@ const Register = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
                 <Button variant="primary" type="submit">
                     Register
                 </Button>
                 <p>Already have an account? <Link to='/login' className='text-success pe-auto text-decoration-none' onClick={navigateLogin}>Please Login</Link></p>
             </Form>
+            {errorElement}
+            <SocialLogin></SocialLogin>
         </div>
     );
 };
