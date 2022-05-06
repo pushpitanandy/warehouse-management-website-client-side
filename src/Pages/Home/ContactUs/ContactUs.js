@@ -2,7 +2,7 @@ import React from 'react';
 
 const ContactUs = () => {
     return (
-        <div className='text-center'>
+        <div className='text-center mt-5'>
             <h2>Contact Us</h2>
             <br />
             <h5>We ship to most countries direct from our facility in South Florida.<br /> <span className='text-primary'>Feel free to visit us.</span></h5>

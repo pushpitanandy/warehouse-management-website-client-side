@@ -17,7 +17,7 @@ const Inventory = () => {
 
     return (
         <div className='container-fluid m-5 p-3'>
-            <h2 className='text-center mt-5 mb-2 p-2'>Available Perfumes</h2>
+            <h2 className='text-center mt-5 mb-2 pt-2'>Available Perfumes</h2>
             <Row xs={1} md={3} className="g-4">
 
                 {

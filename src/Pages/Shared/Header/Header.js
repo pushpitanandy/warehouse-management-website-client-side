@@ -6,7 +6,7 @@ import logo from '../../../images/perfumeBottle.png';
 const Header = () => {
     return (
         <div>
-            <Navbar collapseOnSelect expand="lg" fixed="top" bg="dark" variant="dark">
+            <Navbar collapseOnSelect expand="lg" fixed='top' bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to="/"><img
                         alt=""
