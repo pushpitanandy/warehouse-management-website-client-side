@@ -5,6 +5,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Loading from '../../Shared/Loading/Loading';
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
 
@@ -50,6 +51,9 @@ const Register = () => {
 
     return (
         <div className='container-fluid mt-5 w-50 mx-auto'>
+            <Helmet>
+                <title>Register - Perfumes United</title>
+            </Helmet>
             <h2 className='pt-4 text-center'>Please Register</h2>
             <Form onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">

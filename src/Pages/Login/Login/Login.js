@@ -7,6 +7,7 @@ import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
 
@@ -64,6 +65,9 @@ const Login = () => {
 
     return (
         <div className='container-fluid mt-5 w-50 mx-auto'>
+            <Helmet>
+                <title>Login - Perfumes United</title>
+            </Helmet>
             <h2 className='pt-4 text-center'>Please Login</h2>
             <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
