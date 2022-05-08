@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
 const PerfumeDetail = () => {
     const { perfumeId } = useParams();
+    const navigate = useNavigate();
     const [perfume, setPerfume] = useState({});
 
     useEffect(() => {
@@ -37,6 +38,7 @@ const PerfumeDetail = () => {
                     <input className='mb-2' placeholder='Enter Quantity' {...register("quantity")} defaultValue={perfume.qunatity} />
                     <input className='mb-2 btn btn-primary' type="submit" />
                 </form>
+                <button onClick={() => navigate('/manageInventory')} className='btn btn-success d-grid col-6 mx-auto px-5 mt-3'>Manage Inventories</button>
             </div>
         </div>
     );
