@@ -19,9 +19,9 @@ const RequireAuth = ({ children }) => {
     }
 
     if (user.providerData[0]?.providerId === 'password' && !user.emailVerified) {
-        return <div>
-            <h3 classname="text-danger">Your email is not verified!!</h3>
-            <h5 classname="text-sucess">Please verify your email address</h5>
+        return <div className='container-fluid mt-5 w-50 mx-auto'>
+            <h3 classname="text-danger mt-3">Your email is not verified!!</h3>
+            <h5 classname="text-success">Please verify your email address</h5>
             <button className='btn btn-primary'
                 onClick={async () => {
                     await sendEmailVerification();

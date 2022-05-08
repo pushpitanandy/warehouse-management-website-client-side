@@ -4,9 +4,6 @@ import { Helmet } from 'react-helmet-async';
 const ContactUs = () => {
     return (
         <div className='text-center mt-5'>
-            <Helmet>
-                <title>Contact Us - Perfumes United</title>
-            </Helmet>
             <h2>Contact Us</h2>
             <br />
             <h5>We ship to most countries direct from our facility in South Florida.<br /> <span className='text-primary'>Feel free to visit us.</span></h5>

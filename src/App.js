@@ -11,6 +11,8 @@ import PerfumeDetail from './Pages/PerfumeDetail/PerfumeDetail';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
+import ManageInventory from './Pages/ManageInventory/ManageInventory';
+import AddPerfume from './Pages/AddPerfume/AddPerfume';
 
 function App() {
   return (
@@ -23,6 +25,16 @@ function App() {
         <Route path='/inventory/:perfumeId' element={
           <RequireAuth>
             <PerfumeDetail></PerfumeDetail>
+          </RequireAuth>
+        }></Route>
+        <Route path='/manageInventory' element={
+          <RequireAuth>
+            <ManageInventory></ManageInventory>
+          </RequireAuth>
+        }></Route>
+        <Route path='/addPerfume' element={
+          <RequireAuth>
+            <AddPerfume></AddPerfume>
           </RequireAuth>
         }></Route>
         <Route path='/about' element={<About></About>}></Route>
