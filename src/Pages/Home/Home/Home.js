@@ -27,7 +27,7 @@ const Home = () => {
 
                 </Row>
             </div>
-            <button onClick={() => navigate('/manageInventory')} className='btn btn-success d-grid col-6 mx-auto px-5'>Manage Inventories</button>
+            <button onClick={() => navigate('/inventory')} className='btn btn-success d-grid col-6 mx-auto px-5'>Show All Perfumes</button>
             <About></About>
             <ContactUs></ContactUs>
         </div>

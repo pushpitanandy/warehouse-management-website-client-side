@@ -1,7 +1,11 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from 'react-toastify';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const AddPerfume = () => {
+    const [user] = useAuthState(auth);
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         const url = 'http://localhost:5000/perfume';
@@ -16,6 +20,7 @@ const AddPerfume = () => {
             .then(result => {
                 console.log(result);
             })
+        toast('New Item Added');
     }
 
     return (
@@ -28,8 +33,10 @@ const AddPerfume = () => {
                 <input className='mb-2' placeholder='Price' type="number" {...register("price")} />
                 <input className='mb-2' placeholder='Quantity' type="number" {...register("quantity")} />
                 <input className='mb-2' placeholder='Image URL' {...register("image")} />
+                <input className='mb-2' placeholder='Email' defaultValue={user.email} {...register("email")} />
                 <input className='btn btn-success' type="submit" value='Add new Perfume' />
             </form>
+            <ToastContainer />
         </div>
     );
 };
