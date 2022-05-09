@@ -14,6 +14,7 @@ import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import ManageInventory from './Pages/ManageInventory/ManageInventory';
 import AddPerfume from './Pages/AddPerfume/AddPerfume';
 import UserItems from './Pages/UserItems/UserItems';
+import Blogs from './Pages/Blogs/Blogs';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
         <Route path='/contactUs' element={<ContactUs></ContactUs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
