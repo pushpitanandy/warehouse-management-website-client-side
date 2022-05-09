@@ -20,7 +20,7 @@ const Perfume = ({ perfume }) => {
                     <p>Price: <span className='text-primary fw-bold'>${price}</span></p>
                     <p>Suppier: {supplierName}</p>
                     <p>Available quantity: {quantity}</p>
-                    <Button onClick={() => navigateToDetail(_id)} variant="primary">Manage</Button>
+                    <Button onClick={() => navigateToDetail(_id)} variant="primary">Update</Button>
                 </Card.Body>
             </Card>
         </div>

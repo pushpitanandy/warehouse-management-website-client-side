@@ -1,10 +1,13 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import usePerfumes from '../../hooks/usePerfumes';
 
 const ManageInventory = () => {
 
     const [perfumes, setPerfumes] = usePerfumes();
+
+    const navigate = useNavigate();
 
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
@@ -23,7 +26,8 @@ const ManageInventory = () => {
 
     return (
         <div className='container-fluid mt-5'>
-            <h2>Manage the Perfume Inventory</h2>
+            <h2 className='p-3'>Manage the Perfume Inventory</h2>
+            <button onClick={() => navigate('/addPerfume')} className='btn btn-success d-grid col-6 mx-auto px-5 m-3'>Add New Item </button>
             <Table striped bordered hover size="sm">
                 <thead>
                     <tr>
