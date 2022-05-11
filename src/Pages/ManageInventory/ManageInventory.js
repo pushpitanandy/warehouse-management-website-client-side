@@ -12,7 +12,7 @@ const ManageInventory = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `http://localhost:5000/perfume/${id}`;
+            const url = `https://whispering-castle-68362.herokuapp.com/perfume/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

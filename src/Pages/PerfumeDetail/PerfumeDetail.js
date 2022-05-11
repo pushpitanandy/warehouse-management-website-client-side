@@ -9,7 +9,7 @@ const PerfumeDetail = () => {
     const [isReload, setIsReload] = useState(true);
 
     useEffect(() => {
-        const url = `http://localhost:5000/perfume/${perfumeId}`;
+        const url = `https://whispering-castle-68362.herokuapp.com/perfume/${perfumeId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setPerfume(data));
@@ -22,7 +22,7 @@ const PerfumeDetail = () => {
         perfume.quantity = newQuantity;
         setPerfume(perfume);
 
-        const url = `http://localhost:5000/perfume/${perfumeId}`;
+        const url = `https://whispering-castle-68362.herokuapp.com/perfume/${perfumeId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -46,7 +46,7 @@ const PerfumeDetail = () => {
         perfume.quantity = newQuantity;
         setPerfume(perfume);
 
-        const url = `http://localhost:5000/perfume/${perfumeId}`;
+        const url = `https://whispering-castle-68362.herokuapp.com/perfume/${perfumeId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -86,6 +86,6 @@ const PerfumeDetail = () => {
             </div>
         </div>
     );
-};
+}
 
 export default PerfumeDetail;

@@ -6,7 +6,7 @@ import banner3 from '../../../images/banner3.webp';
 
 const Banner = () => {
     return (
-        <div>
+        <div className="container-fluid">
             <Carousel>
                 <Carousel.Item>
                     <img

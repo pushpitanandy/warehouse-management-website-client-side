@@ -8,7 +8,7 @@ const AddPerfume = () => {
     const [user] = useAuthState(auth);
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        const url = 'http://localhost:5000/perfume';
+        const url = 'https://whispering-castle-68362.herokuapp.com/perfume';
         fetch(url, {
             method: 'POST',
             headers: {
